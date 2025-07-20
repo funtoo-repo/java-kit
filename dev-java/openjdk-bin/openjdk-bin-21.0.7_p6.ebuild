@@ -7,13 +7,13 @@ inherit java-vm-2
 DESCRIPTION="Prebuilt Java JDK binaries provided by Eclipse Temurin"
 HOMEPAGE="https://adoptium.net"
 SRC_URI="
-	ppc64? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26%2B4/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.26_4.tar.gz -> OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.26_4.tar.gz )
-	arm64? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26%2B4/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.26_4.tar.gz -> OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.26_4.tar.gz )
-	amd64? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26%2B4/OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4.tar.gz -> OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4.tar.gz )
-	arm? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.26%2B4/OpenJDK11U-jdk_arm_linux_hotspot_11.0.26_4.tar.gz -> OpenJDK11U-jdk_arm_linux_hotspot_11.0.26_4.tar.gz )"
+	amd64? ( https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_x64_linux_hotspot_21.0.7_6.tar.gz -> OpenJDK21U-jdk_x64_linux_hotspot_21.0.7_6.tar.gz )
+	arm64? ( https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.7_6.tar.gz -> OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.7_6.tar.gz )
+	ppc64? ( https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_ppc64le_linux_hotspot_21.0.7_6.tar.gz -> OpenJDK21U-jdk_ppc64le_linux_hotspot_21.0.7_6.tar.gz )
+	riscv64? ( https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.7%2B6/OpenJDK21U-jdk_riscv64_linux_hotspot_21.0.7_6.tar.gz -> OpenJDK21U-jdk_riscv64_linux_hotspot_21.0.7_6.tar.gz )"
 
 LICENSE="GPL-2-with-classpath-exception"
-KEYWORDS="-* amd64 arm arm64 ppc64"
+KEYWORDS="-* amd64 arm64 ppc64 riscv64"
 SLOT=$(ver_cut 1)
 IUSE="alsa cups headless-awt selinux source"
 
@@ -39,7 +39,7 @@ RDEPEND="
 RESTRICT="preserve-libs splitdebug"
 QA_PREBUILT="*"
 
-S="${WORKDIR}/jdk-11.0.26+4"
+S="${WORKDIR}/jdk-21.0.7+6"
 
 src_unpack() {
 	default
