@@ -11,7 +11,7 @@ arches = {
 	"riscv64": "riscv64",
 
 }
-JDK_MAX_RELEASE = 21
+JDK_MAX_RELEASE = 25
 
 def generate_bin_artifacts(hub, binaries_data, **pkginfo):
 	artifacts = {}
